@@ -44,7 +44,8 @@ public class CustomerController {
 	@RequestMapping("/processForm")
 	public String processForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
 
-		LOGGER.info("Last name: |" + customer.getLastName() + "|" );
+		//LOGGER.info("Last name: |" + customer.getLastName() + "|" );
+		LOGGER.info("Bindingresult: " + bindingResult);
 		
 		if (bindingResult.hasErrors()) {
 			return "customer-form";
